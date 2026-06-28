@@ -7,57 +7,144 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            background: linear-gradient(135deg, #c5a8ff, #a88bff);
-            min-height: 100vh; display: flex; justify-content: center;
-            align-items: center; font-family: 'Georgia', serif; padding: 20px;
+            background: #c8b6ff; /* Ninte favorite purple */
+            min-height: 100vh; 
+            display: flex; 
+            justify-content: center;
+            align-items: center; 
+            font-family: 'Georgia', serif; 
+            padding: 20px;
         }
-        .container { text-align: center; color: white; max-width: 650px; }
-        .line {
-            opacity: 0; transform: translateY(30px);
-            animation: fadeInUp 1.2s ease forwards; margin: 18px 0;
+        
+        .envelope-wrapper {
+            position: relative;
+            cursor: pointer;
         }
-        .line:nth-child(1) { animation-delay: 0.3s; }
-        .line:nth-child(2) { animation-delay: 1.2s; }
-        .line:nth-child(3) { animation-delay: 2.1s; }
-        .line:nth-child(4) { animation-delay: 3s; }
-        .line:nth-child(5) { animation-delay: 3.9s; }
-        .line:nth-child(6) { animation-delay: 4.8s; }
-        .line:nth-child(7) { animation-delay: 5.7s; }
-        .line:nth-child(8) { animation-delay: 6.6s; }
-        .line:nth-child(9) { animation-delay: 7.5s; }
-        .line:nth-child(10) { animation-delay: 8.4s; }
-        .line:nth-child(11) { animation-delay: 9.3s; }
-        .line:nth-child(12) { animation-delay: 10.2s; }
-        .line:nth-child(13) { animation-delay: 11.1s; }
-        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
-        h1 { font-size: 2.2rem; margin-bottom: 30px; }
-        p { font-size: 1.3rem; font-style: italic; line-height: 1.7; }
-        .heart {
-            font-size: 2.5rem; animation: pulse 1.5s ease infinite;
-            animation-delay: 12s; opacity: 0; animation-fill-mode: forwards;
+        
+        .envelope {
+            position: relative;
+            width: 320px;
+            height: 200px;
+            background: #ff5a8a;
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: transform 0.5s;
         }
+        
+        .envelope:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 0;
+            height: 0;
+            border-left: 160px solid transparent;
+            border-right: 160px solid transparent;
+            border-top: 100px solid #ff7a9a;
+            transform-origin: top;
+            transition: transform 0.5s 0.2s;
+            z-index: 3;
+        }
+        
+        .letter {
+            position: absolute;
+            bottom: 0;
+            width: 90%;
+            left: 5%;
+            height: 95%;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 20px 15px;
+            text-align: center;
+            color: #333;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            transition: transform 0.5s 0.4s;
+            z-index: 2;
+            overflow-y: auto;
+        }
+        
+        .letter h2 {
+            color: #ff5a8a;
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+        }
+        
+        .letter p {
+            margin: 8px 0;
+            font-style: italic;
+        }
+        
+        .open .envelope:before {
+            transform: rotateX(180deg);
+            z-index: 0;
+        }
+        
+        .open .letter {
+            transform: translateY(-80px);
+            transition-delay: 0s;
+        }
+        
+        .open .envelope {
+            transform: translateY(60px);
+        }
+        
+        .click-text {
+            position: absolute;
+            bottom: -45px;
+            width: 100%;
+            text-align: center;
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            animation: pulse 2s infinite;
+        }
+        
         @keyframes pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 1; transform: scale(1.2); }
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .hearts {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2rem;
+            opacity: 0;
+            transition: opacity 0.5s 0.8s;
+        }
+        
+        .open .hearts {
+            opacity: 1;
+            animation: heartbeat 1.5s ease infinite;
+        }
+        
+        @keyframes heartbeat {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); }
+            50% { transform: translate(-50%, -50%) scale(1.2); }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1 class="line">For kunjaa, 💜</h1>
-        <p class="line">I just want to say love youhh sooo muchhhhhh😗🤌🏻</p>
-        <p class="line">You're the best one I got. Seriously.</p>
-        <p class="line">You're my favorite person to do everything with.</p>
-        <p class="line">The good days, the chaotic days,</p>
-        <p class="line">even the boring "entha cheyyande" days.</p>
-        <p class="line">Nee കൂടെ ഉണ്ടെങ്കിൽ everything feels better.</p>
-        <p class="line">I don't need grand gestures or perfect moments.</p>
-        <p class="line">I just need you. Your laugh. Your സമാധാനം.</p>
-        <p class="line">The way you make home feel like a person.🥹</p>
-        <p class="line">You're my Tara's achan but always my man.</p>
-        <p class="line">Yours,</p>
-        <p class="line">sivanii</p>
-        <div class="line heart">🥹💋</div>
+    <div class="envelope-wrapper" onclick="this.classList.toggle('open')">
+        <div class="envelope"></div>
+        <div class="letter">
+            <h2>For kunjaa, 💜</h2>
+            <p>I just want to say love youhh sooo muchhhhhh😗🤌🏻</p>
+            <p>You're the best one I got. Seriously.</p>
+            <p>You're my favorite person to do everything with.</p>
+            <p>The good days, the chaotic days,</p>
+            <p>even the boring "entha cheyyande" days.</p>
+            <p>Nee കൂടെ ഉണ്ടെങ്കിൽ everything feels better.</p>
+            <p>I don't need grand gestures or perfect moments.</p>
+            <p>I just need you. Your laugh. Your സമാധാനം.</p>
+            <p>The way you make home feel like a person.🥹</p>
+            <p>You're my Tara's achan but always my man.</p>
+            <p><b>Yours,<br>sivanii</b></p>
+        </div>
+        <div class="hearts">🥹💋</div>
+        <div class="click-text">Tap to Open 💌</div>
     </div>
 </body>
-  </html>
+        </html>
