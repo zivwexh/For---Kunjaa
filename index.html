@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For Kunjaa 💜</title>
+    <title>For Ekkuzzz 💌</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             background: #f5e6f0;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(214,109,146,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(233,156,182,0.15) 0%, transparent 50%);
             min-height: 100vh; 
             display: flex; 
             justify-content: center;
@@ -17,70 +20,66 @@
             flex-direction: column;
             overflow: hidden;
         }
-        
         .envelope-wrapper {
             position: relative;
             margin-bottom: 30px;
         }
-        
         .envelope {
             position: relative;
             width: 280px;
             height: 170px;
             margin: 0 auto;
         }
-        
-        /* LETTER - FULLY HIDDEN */
         .letter {
             position: absolute;
-            top: 20px;
+            top: 15px;
             left: 50%;
             transform: translateX(-50%);
-            width: 80%;
-            height: 130px;
+            width: 85%;
+            height: 140px;
             background: white;
-            border-radius: 3px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            border-radius: 4px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.25);
             padding: 10px 8px;
             text-align: center;
             color: #333;
-            font-size: 0.55rem;
-            line-height: 1.2;
+            font-size: 0.48rem;
+            line-height: 1.15;
             transition: all 0.6s ease;
-            z-index: 1;
+            z-index: 4;
             overflow-y: auto;
+            border: 3px solid #d66d92;
         }
-        
         .letter h3 {
             color: #d66d92;
-            margin-bottom: 5px;
-            font-size: 0.7rem;
+            margin-bottom: 4px;
+            font-size: 0.65rem;
             background: #ffe8f0;
             padding: 2px;
             border-radius: 2px;
         }
-        
         .letter p {
-            margin: 2px 0;
+            margin: 1px 0;
             font-style: italic;
         }
-        
         .letter-hearts {
-            font-size: 1.3rem;
-            margin-top: 4px;
+            font-size: 1.2rem;
+            margin-top: 3px;
         }
-        
-        /* SOLID PINK BASE */
         .envelope-base {
             position: absolute;
             width: 100%;
             height: 100%;
-            background: #e99cb6;
+            background-color: #f5f0e6;
+            background-image: 
+                url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M25 40 C20 35, 12 28, 12 22 C12 18, 15 15, 19 15 C21 15, 24 16, 25 17 C26 16, 29 15, 31 15 C35 15, 38 18, 38 22 C38 28, 30 35, 25 40 Z' fill='%23b91c1c'/%3E%3C/svg%3E");
+            background-size: 50px 50px;
+            background-position: 0 0, 25px 25px;
             z-index: 2;
             border-radius: 0 0 6px 6px;
+            border: 3px solid #c96b8e;
+            box-shadow: 0 8px 20px rgba(214,109,146,0.4);
         }
-        
-        /* Bottom flap */
         .flap-bottom {
             position: absolute;
             bottom: 0;
@@ -89,11 +88,10 @@
             height: 0;
             border-left: 140px solid transparent;
             border-right: 140px solid transparent;
-            border-bottom: 85px solid #e99cb6;
+            border-bottom: 85px solid #f2b8cc;
             z-index: 3;
+            filter: drop-shadow(0 -2px 0 #d66d92);
         }
-        
-        /* Left flap */
         .flap-left {
             position: absolute;
             top: 0;
@@ -102,11 +100,10 @@
             height: 0;
             border-top: 85px solid transparent;
             border-bottom: 85px solid transparent;
-            border-left: 140px solid #e99cb6;
+            border-left: 140px solid #eda1b9;
             z-index: 3;
+            filter: drop-shadow(2px 0 0 #d66d92);
         }
-        
-        /* Right flap */
         .flap-right {
             position: absolute;
             top: 0;
@@ -115,11 +112,10 @@
             height: 0;
             border-top: 85px solid transparent;
             border-bottom: 85px solid transparent;
-            border-right: 140px solid #e99cb6;
+            border-right: 140px solid #e085a3;
             z-index: 3;
+            filter: drop-shadow(-2px 0 0 #d66d92);
         }
-        
-        /* TOP FLAP - FULL COVER */
         .flap-top {
             position: absolute;
             top: 0;
@@ -128,54 +124,46 @@
             height: 0;
             border-left: 140px solid transparent;
             border-right: 140px solid transparent;
-            border-top: 85px solid #d66d92;
+            border-top: 85px solid #c96b8e;
             transform-origin: top;
             transition: transform 0.5s ease;
             z-index: 10;
+            filter: drop-shadow(0 -3px 0 #b55a7a) drop-shadow(0 2px 4px rgba(0,0,0,0.2));
         }
-        
-        /* CENTER HEART - PUTHIYA ADDITION */
         .center-heart {
             position: absolute;
-            top: 25px;
+            top: 38px;
             left: 50%;
-            transform: translateX(-50%);
+            transform: translate(-50%, -50%);
             font-size: 1.8rem;
             z-index: 11;
             transition: all 0.5s ease;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+            line-height: 1;
         }
-        
-        /* OPEN AAKUMBOL */
         .open .flap-top {
             transform: rotateX(180deg);
             z-index: 1;
         }
-        
         .open .center-heart {
-            transform: translateX(-50%) rotateX(180deg) translateY(-50px);
+            transform: translate(-50%, -50%) rotateX(180deg) translateY(-50px);
             opacity: 0.3;
             z-index: 1;
         }
-        
         .open .letter {
-            transform: translateX(-50%) translateY(-65px);
-            height: 180px;
-            z-index: 5;
+            transform: translateX(-50%) translateY(-70px);
+            height: 195px;
+            z-index: 15;
         }
-        
         .open .envelope-base {
             z-index: 1;
         }
-        
-        /* BUTTONS */
         .buttons {
             display: flex;
             gap: 15px;
             margin-top: 25px;
             z-index: 20;
         }
-        
         .btn {
             padding: 10px 30px;
             border: 2px solid #d66d92;
@@ -188,17 +176,13 @@
             font-size: 0.9rem;
             transition: all 0.3s;
         }
-        
         .btn.open-btn {
             background: #d66d92;
             color: white;
         }
-        
         .btn:active {
             transform: scale(0.95);
         }
-        
-        /* FLYING HEARTS - 7 ENNAM */
         .flying-heart {
             position: fixed;
             font-size: 1.3rem;
@@ -206,7 +190,6 @@
             pointer-events: none;
             z-index: 999;
         }
-        
         @keyframes flyUp {
             0% {
                 transform: translateY(0) scale(1);
@@ -222,9 +205,8 @@
 <body>
     <div class="envelope-wrapper" id="envelope">
         <div class="envelope">
-            <!-- Letter ellaatinum adiyil -->
             <div class="letter">
-                <h3>To: Kunjaa 💜</h3>
+                <h3>For: Ekkuzzz 🤍🤌🏻</h3>
                 <p>I just want to say love youhh sooo muchhhhhh😗🤌🏻</p>
                 <p>You're the best one I got. Seriously.</p>
                 <p>You're my favorite person to do everything with.</p>
@@ -236,33 +218,24 @@
                 <p>The way you make home feel like a person.🥹</p>
                 <p>You're my Tara's achan but always my man.</p>
                 <p><b>Yours,<br>sivanii</b></p>
-                <div class="letter-hearts">💕💕</div>
+                <div class="letter-hearts">🥹💋</div>
             </div>
-            
-            <!-- Solid pink base -->
             <div class="envelope-base"></div>
-            
-            <!-- Flaps -->
             <div class="flap-bottom"></div>
             <div class="flap-left"></div>
             <div class="flap-right"></div>
             <div class="flap-top"></div>
-            
-            <!-- CENTER HEART - PUTHIYA ADDITION -->
-            <div class="center-heart">💜</div>
+            <div class="center-heart">💗</div>
         </div>
     </div>
-    
     <div class="buttons">
         <button class="btn open-btn" onclick="openEnvelope()">OPEN</button>
         <button class="btn" onclick="closeEnvelope()">CLOSE</button>
     </div>
-
     <script>
         const envelope = document.getElementById('envelope');
-        
         function createFlyingHearts() {
-            const hearts = ['💕','💖','💜','🥹','💋','😘'];
+            const hearts = ['💕','🤍','💘','🥹','💋','💗'];
             for(let i = 0; i < 7; i++) {
                 setTimeout(() => {
                     const heart = document.createElement('div');
@@ -275,12 +248,10 @@
                 }, i * 200);
             }
         }
-        
         function openEnvelope() {
             envelope.classList.add('open');
             createFlyingHearts();
         }
-        
         function closeEnvelope() {
             envelope.classList.remove('open');
         }
