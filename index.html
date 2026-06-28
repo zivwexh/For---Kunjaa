@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For Ekkuzzz 💌</title>
+    <title>For Ekkuzzz 💗</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            background: #f5e6f0;
-            background-image: 
-                radial-gradient(circle at 20% 50%, rgba(214,109,146,0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(233,156,182,0.15) 0%, transparent 50%);
-            min-height: 100vh; 
-            display: flex; 
+            background: #faf5f0;
+            background-image:
+                radial-gradient(circle at 20% 50%, rgba(214,109,146,0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(233,156,182,0.1) 0%, transparent 50%);
+            min-height: 100vh;
+            display: flex;
             justify-content: center;
-            align-items: center; 
-            font-family: 'Georgia', serif; 
+            align-items: center;
+            font-family: 'Georgia', serif;
             padding: 20px;
             flex-direction: column;
             overflow: hidden;
@@ -23,190 +23,135 @@
         .envelope-wrapper {
             position: relative;
             margin-bottom: 30px;
+            padding: 25px;
+            border: 4px dashed #e085a3;
+            border-radius: 15px;
+            background: rgba(255,255,255,0.4);
+            box-shadow: 0 0 25px rgba(214,109,146,0.3);
         }
-        .envelope {
-            position: relative;
-            width: 280px;
-            height: 170px;
-            margin: 0 auto;
-        }
-        .letter {
+        
+        /* WHITE HEARTS CHUTTUM */
+        .envelope-wrapper::before,
+        .envelope-wrapper::after {
+            content: '🤍';
             position: absolute;
-            top: 15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 85%;
-            height: 140px;
-            background: white;
-            border-radius: 4px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.25);
-            padding: 10px 8px;
-            text-align: center;
-            color: #333;
-            font-size: 0.48rem;
-            line-height: 1.15;
-            transition: all 0.6s ease;
-            z-index: 4;
-            overflow-y: auto;
-            border: 3px solid #d66d92;
-        }
-        .letter h3 {
-            color: #d66d92;
-            margin-bottom: 4px;
-            font-size: 0.65rem;
-            background: #ffe8f0;
-            padding: 2px;
-            border-radius: 2px;
-        }
-        .letter p {
-            margin: 1px 0;
-            font-style: italic;
-        }
-        .letter-hearts {
             font-size: 1.2rem;
-            margin-top: 3px;
+            opacity: 0.6;
+            animation: float 3s ease-in-out infinite;
         }
-        .envelope-base {
+        .envelope-wrapper::before {
+            top: -10px;
+            left: -10px;
+            animation-delay: 0s;
+        }
+        .envelope-wrapper::after {
+            bottom: -10px;
+            right: -10px;
+            animation-delay: 1.5s;
+        }
+        .corner-hearts {
             position: absolute;
             width: 100%;
             height: 100%;
-            background-color: #f5f0e6;
-            background-image: 
-                url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M25 40 C20 35, 12 28, 12 22 C12 18, 15 15, 19 15 C21 15, 24 16, 25 17 C26 16, 29 15, 31 15 C35 15, 38 18, 38 22 C38 28, 30 35, 25 40 Z' fill='%23b91c1c'/%3E%3C/svg%3E");
-            background-size: 50px 50px;
-            background-position: 0 0, 25px 25px;
-            z-index: 2;
-            border-radius: 0 0 6px 6px;
-            border: 3px solid #c96b8e;
-            box-shadow: 0 8px 20px rgba(214,109,146,0.4);
-        }
-        .flap-bottom {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 0;
-            border-left: 140px solid transparent;
-            border-right: 140px solid transparent;
-            border-bottom: 85px solid #f2b8cc;
-            z-index: 3;
-            filter: drop-shadow(0 -2px 0 #d66d92);
-        }
-        .flap-left {
-            position: absolute;
             top: 0;
             left: 0;
-            width: 0;
-            height: 0;
-            border-top: 85px solid transparent;
-            border-bottom: 85px solid transparent;
-            border-left: 140px solid #eda1b9;
-            z-index: 3;
-            filter: drop-shadow(2px 0 0 #d66d92);
-        }
-        .flap-right {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 0;
-            height: 0;
-            border-top: 85px solid transparent;
-            border-bottom: 85px solid transparent;
-            border-right: 140px solid #e085a3;
-            z-index: 3;
-            filter: drop-shadow(-2px 0 0 #d66d92);
-        }
-        .flap-top {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 0;
-            height: 0;
-            border-left: 140px solid transparent;
-            border-right: 140px solid transparent;
-            border-top: 85px solid #c96b8e;
-            transform-origin: top;
-            transition: transform 0.5s ease;
-            z-index: 10;
-            filter: drop-shadow(0 -3px 0 #b55a7a) drop-shadow(0 2px 4px rgba(0,0,0,0.2));
-        }
-        .center-heart {
-            position: absolute;
-            top: 38px;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 1.8rem;
-            z-index: 11;
-            transition: all 0.5s ease;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
-            line-height: 1;
-        }
-        .open .flap-top {
-            transform: rotateX(180deg);
-            z-index: 1;
-        }
-        .open .center-heart {
-            transform: translate(-50%, -50%) rotateX(180deg) translateY(-50px);
-            opacity: 0.3;
-            z-index: 1;
-        }
-        .open .letter {
-            transform: translateX(-50%) translateY(-70px);
-            height: 195px;
-            z-index: 15;
-        }
-        .open .envelope-base {
-            z-index: 1;
-        }
-        .buttons {
-            display: flex;
-            gap: 15px;
-            margin-top: 25px;
-            z-index: 20;
-        }
-        .btn {
-            padding: 10px 30px;
-            border: 2px solid #d66d92;
-            background: white;
-            color: #d66d92;
-            border-radius: 4px;
-            font-weight: bold;
-            cursor: pointer;
-            font-family: 'Georgia', serif;
-            font-size: 0.9rem;
-            transition: all 0.3s;
-        }
-        .btn.open-btn {
-            background: #d66d92;
-            color: white;
-        }
-        .btn:active {
-            transform: scale(0.95);
-        }
-        .flying-heart {
-            position: fixed;
-            font-size: 1.3rem;
-            animation: flyUp 3s ease-out forwards;
             pointer-events: none;
-            z-index: 999;
         }
-        @keyframes flyUp {
-            0% {
-                transform: translateY(0) scale(1);
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-100vh) scale(0);
-                opacity: 0;
-            }
+        .corner-hearts span {
+            position: absolute;
+            font-size: 1rem;
+            opacity: 0.5;
+            animation: float 4s ease-in-out infinite;
         }
+        .corner-hearts span:nth-child(1) { top: -8px; right: 20%; animation-delay: 0.5s; }
+        .corner-hearts span:nth-child(2) { bottom: -8px; left: 15%; animation-delay: 1s; }
+        .corner-hearts span:nth-child(3) { top: 30%; left: -12px; animation-delay: 2s; }
+        .corner-hearts span:nth-child(4) { top: 60%; right: -12px; animation-delay: 2.5s; }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-8px) rotate(10deg); }
+        }
+        
+        .envelope { position: relative; width: 280px; height: 170px; margin: 0 auto; }
+        .letter {
+            position: absolute; top: 15px; left: 50%; transform: translateX(-50%);
+            width: 85%; height: 140px; background: white; border-radius: 4px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.25); padding: 10px 8px;
+            text-align: center; color: #333; font-size: 0.48rem; line-height: 1.15;
+            transition: all 0.6s ease; z-index: 4; overflow-y: auto; border: 3px solid #d66d92;
+        }
+        .letter h3 { color: #d66d92; margin-bottom: 4px; font-size: 0.65rem; background: #ffe8f0; padding: 2px; border-radius: 2px; }
+        .letter p { margin: 1px 0; font-style: italic; }
+        .letter-hearts { font-size: 1.2rem; margin-top: 3px; }
+        
+        /* VALIYA HEARTS - OPEN ADIKKUMBOL POKKI VARUM */
+        .big-hearts {
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            opacity: 0;
+            transition: all 0.6s ease 0.2s;
+            z-index: 6;
+        }
+        .big-hearts span {
+            font-size: 2.5rem;
+            filter: drop-shadow(0 3px 5px rgba(0,0,0,0.3));
+            transform: translateY(30px) scale(0);
+            transition: all 0.6s ease;
+        }
+        .big-hearts span:nth-child(1) { transition-delay: 0.3s; }
+        .big-hearts span:nth-child(2) { transition-delay: 0.5s; font-size: 3rem; }
+        .big-hearts span:nth-child(3) { transition-delay: 0.7s; }
+        
+        .envelope-base {
+            position: absolute; width: 100%; height: 100%; background-color: #f5f0e6;
+            background-image: url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M25 40 C20 35, 12 28, 12 22 C12 18, 15 15, 19 15 C21 15, 24 16, 25 17 C26 16, 29 15, 31 15 C35 15, 38 18, 38 22 C38 28, 30 35, 25 40 Z' fill='%23b91c1c'/%3E%3C/svg%3E");
+            background-size: 50px 50px; z-index: 2; border-radius: 0 0 6px 6px;
+            border: 3px solid #c96b8e; box-shadow: 0 8px 20px rgba(214,109,146,0.4);
+        }
+        .flap-bottom { position: absolute; bottom: 0; left: 0; width: 0; height: 0; border-left: 140px solid transparent; border-right: 140px solid transparent; border-bottom: 85px solid #f2b8cc; z-index: 3; filter: drop-shadow(0 -2px 0 #d66d92); }
+        .flap-left { position: absolute; top: 0; left: 0; width: 0; height: 0; border-top: 85px solid transparent; border-bottom: 85px solid transparent; border-left: 140px solid #eda1b9; z-index: 3; filter: drop-shadow(2px 0 0 #d66d92); }
+        .flap-right { position: absolute; top: 0; right: 0; width: 0; height: 0; border-top: 85px solid transparent; border-bottom: 85px solid transparent; border-right: 140px solid #e085a3; z-index: 3; filter: drop-shadow(-2px 0 0 #d66d92); }
+        .flap-top { position: absolute; top: 0; left: 0; width: 0; height: 0; border-left: 140px solid transparent; border-right: 140px solid transparent; border-top: 85px solid #c96b8e; transform-origin: top; transition: transform 0.5s ease; z-index: 10; filter: drop-shadow(0 -3px 0 #b55a7a) drop-shadow(0 2px 4px rgba(0,0,0,0.2)); }
+        
+        /* CENTRE HEART - VALUTH */
+        .center-heart {
+            position: absolute; top: 38px; left: 50%; transform: translate(-50%, -50%);
+            font-size: 2.5rem; z-index: 11; transition: all 0.5s ease;
+            filter: drop-shadow(0 3px 6px rgba(0,0,0,0.4)); line-height: 1;
+        }
+        
+        .open .flap-top { transform: rotateX(180deg); z-index: 1; }
+        .open .center-heart { transform: translate(-50%, -50%) rotateX(180deg) translateY(-50px); opacity: 0.3; z-index: 1; }
+        .open .letter { transform: translateX(-50%) translateY(-70px); height: 195px; z-index: 15; }
+        .open .big-hearts { opacity: 1; }
+        .open .big-hearts span { transform: translateY(-40px) scale(1); }
+        .open .envelope-base { z-index: 1; }
+        
+        .buttons { display: flex; gap: 15px; margin-top: 25px; z-index: 20; }
+        .btn { padding: 10px 30px; border: 2px solid #d66d92; background: white; color: #d66d92; border-radius: 4px; font-weight: bold; cursor: pointer; font-family: 'Georgia', serif; font-size: 0.9rem; transition: all 0.3s; }
+        .btn.open-btn { background: #d66d92; color: white; }
+        .btn:active { transform: scale(0.95); }
+        .flying-heart { position: fixed; font-size: 1.3rem; animation: flyUp 3s ease-out forwards; pointer-events: none; z-index: 999; }
+        @keyframes flyUp { 0% { transform: translateY(0) scale(1); opacity: 1; } 100% { transform: translateY(-100vh) scale(0); opacity: 0; } }
     </style>
 </head>
 <body>
     <div class="envelope-wrapper" id="envelope">
+        <!-- WHITE HEARTS CHUTTUM -->
+        <div class="corner-hearts">
+            <span>🤍</span>
+            <span>🤍</span>
+            <span>🤍</span>
+            <span>🤍</span>
+        </div>
         <div class="envelope">
             <div class="letter">
-                <h3>For: Ekkuzzz 🤍🤌🏻</h3>
+                <h3>For: Ekkuzzz 💗</h3>
                 <p>I just want to say love youhh sooo muchhhhhh😗🤌🏻</p>
                 <p>You're the best one I got. Seriously.</p>
                 <p>You're my favorite person to do everything with.</p>
@@ -219,12 +164,19 @@
                 <p>You're my Tara's achan but always my man.</p>
                 <p><b>Yours,<br>sivanii</b></p>
                 <div class="letter-hearts">🥹💋</div>
+                <!-- VALIYA HEARTS -->
+                <div class="big-hearts">
+                    <span>💗</span>
+                    <span>💖</span>
+                    <span>💗</span>
+                </div>
             </div>
             <div class="envelope-base"></div>
             <div class="flap-bottom"></div>
             <div class="flap-left"></div>
             <div class="flap-right"></div>
             <div class="flap-top"></div>
+            <!-- CENTRE HEART VALUTH -->
             <div class="center-heart">💗</div>
         </div>
     </div>
@@ -235,7 +187,7 @@
     <script>
         const envelope = document.getElementById('envelope');
         function createFlyingHearts() {
-            const hearts = ['💕','🤍','💘','🥹','💋','💗'];
+            const hearts = ['💕','💖','💗','🥹','💋','😘'];
             for(let i = 0; i < 7; i++) {
                 setTimeout(() => {
                     const heart = document.createElement('div');
