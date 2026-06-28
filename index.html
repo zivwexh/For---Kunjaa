@@ -70,7 +70,7 @@
             margin-top: 4px;
         }
         
-        /* SOLID PINK BASE - Letter full marakkan */
+        /* SOLID PINK BASE */
         .envelope-base {
             position: absolute;
             width: 100%;
@@ -134,9 +134,27 @@
             z-index: 10;
         }
         
+        /* CENTER HEART - PUTHIYA ADDITION */
+        .center-heart {
+            position: absolute;
+            top: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.8rem;
+            z-index: 11;
+            transition: all 0.5s ease;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+        }
+        
         /* OPEN AAKUMBOL */
         .open .flap-top {
             transform: rotateX(180deg);
+            z-index: 1;
+        }
+        
+        .open .center-heart {
+            transform: translateX(-50%) rotateX(180deg) translateY(-50px);
+            opacity: 0.3;
             z-index: 1;
         }
         
@@ -221,14 +239,17 @@
                 <div class="letter-hearts">💕💕</div>
             </div>
             
-            <!-- Solid pink base - Letter full marakkum -->
+            <!-- Solid pink base -->
             <div class="envelope-base"></div>
             
-            <!-- Flaps ellaam letter nte mukalil -->
+            <!-- Flaps -->
             <div class="flap-bottom"></div>
             <div class="flap-left"></div>
             <div class="flap-right"></div>
             <div class="flap-top"></div>
+            
+            <!-- CENTER HEART - PUTHIYA ADDITION -->
+            <div class="center-heart">💜</div>
         </div>
     </div>
     
